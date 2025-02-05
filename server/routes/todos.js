@@ -1,7 +1,8 @@
 const express = require('express');
+
 const router = express.Router();
 
-const todoController = require('../controllers/TodoController');
+const todoController = require('../controllers/todoController.js');
 
 router.get('/', todoController.getAllTodos);
 router.get('/:id', todoController.getTodo);
@@ -12,4 +13,4 @@ router.patch('/:id', todoController.patchTodo);
 router.delete('/', todoController.deleteAllTodos);
 router.delete('/:id', todoController.deleteTodo);
 
-export default router;
+module.exports = router;
