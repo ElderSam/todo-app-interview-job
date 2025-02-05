@@ -1,15 +1,10 @@
 require('dotenv').config()
 const express = require('express');
-const https = require('https');
-const fs = require('fs');
-const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+
+app.use(express.json());
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Headers', 'Content-Type');
